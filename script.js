@@ -499,7 +499,7 @@ function processPayment() {
     }
     
     // Generate invoice code
-    const invoiceCode = 'YHK' + Date.now().toString().slice(-8);
+    const invoiceCode = 'AHMD' + Date.now().toString().slice(-8);
     
     // Get selected items from session
     const items = JSON.parse(sessionStorage.getItem('checkoutItems') || '[]');
@@ -519,7 +519,7 @@ function processPayment() {
                    `Mohon konfirmasi pesanan ini. Terima kasih! 🙏`;
     
     // Admin WhatsApp number (ganti dengan nomor admin sebenarnya)
-    const adminNumber = '6281234567890';
+    const adminNumber = '6287854851480';
     const whatsappUrl = `https://wa.me/${adminNumber}?text=${encodeURIComponent(message)}`;
     
     // Open WhatsApp
@@ -560,7 +560,7 @@ function contactAdmin(adminNumber) {
 
 function contactReseller() {
     const message = `Halo Admin! Saya tertarik untuk menjadi reseller AhmadStore. Mohon info lebih lanjut tentang program reseller. Terima kasih!`;
-    const whatsappUrl = `https://wa.me/628153807229?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/6287854851480?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }
     
@@ -645,14 +645,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Form Submission
-document.addEventListener('DOMContentLoaded', () => {
-    const forms = document.querySelectorAll('.auth-form');
-    forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Fitur authentication akan segera hadir!');
-        });
-    });
+document.addEventListener("DOMContentLoaded", () => {
+    
+    const loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+        loginForm.addEventListener("submit", handleLogin);
+    }
+
+    const registerForm = document.getElementById("registerForm");
+    if (registerForm) {
+        registerForm.addEventListener("submit", handleRegister);
+    }
+
+    updateAuthUI();
 });
 
 // Refresh Button
