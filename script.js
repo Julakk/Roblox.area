@@ -546,8 +546,8 @@ function processPayment() {
 // ============================================
 function contactAdmin(adminNumber) {
     const whatsappNumbers = {
-        1: '6287854851480',
-        2: '6287854851480'
+        1: '6281234567890',
+        2: '6289876543210'
     };
     
     const number = whatsappNumbers[adminNumber];
@@ -778,6 +778,40 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+const adminData = {
+    username: "admin",
+    password: "ahmad2026"
+};
+
+function loginAdmin() {
+    const user = document.getElementById("adminUser").value.trim();
+    const pass = document.getElementById("adminPass").value.trim();
+
+    if (!user || !pass) {
+        alert("❌ Semua field wajib diisi!");
+        return;
+    }
+
+    if (user === adminData.username && pass === adminData.password) {
+        localStorage.setItem("adminLogin", "true");
+        closeAdminModal();
+        window.location.href = "admin-panel.html";
+        return;
+    }
+
+    alert("❌ Username atau password admin salah!");
+}
+
+function showAdminModal() {
+    document.getElementById("adminModal").classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeAdminModal() {
+    document.getElementById("adminModal").classList.remove("active");
+    document.body.style.overflow = "auto";
+}
+
 // Add CSS animations
 const style = document.createElement('style');
 style.textContent = `
@@ -804,4 +838,3 @@ style.textContent = `
 }
 `;
 document.head.appendChild(style);
-
