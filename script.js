@@ -546,8 +546,8 @@ function processPayment() {
 // ============================================
 function contactAdmin(adminNumber) {
     const whatsappNumbers = {
-        1: '6281234567890',
-        2: '6289876543210'
+        1: '6287854851480',
+        2: '6287854851480'
     };
     
     const number = whatsappNumbers[adminNumber];
@@ -804,3 +804,4 @@ style.textContent = `
 }
 `;
 document.head.appendChild(style);
+
