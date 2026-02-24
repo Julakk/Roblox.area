@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111; /* Background gelap */
+            display: flex;
+            color: #eee;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background: #0a0a0a;
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .sidebar ul {
+            padding: 0;
+        }
+
+        .sidebar li {
+            list-style: none;
+            padding: 12px;
+            margin: 5px 0;
+            background: #1b1b1b;
+            cursor: pointer;
+            border-radius: 6px;
+            color: #ccc;
+        }
+
+        .sidebar li:hover {
+            background: #292929;
+            color: #fff;
+        }
+
+        .sidebar .logout {
+            background: #8b0000;
+        }
+
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 30px;
+            background: #111;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Cards */
+        .cards {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1;
+            padding: 20px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.35);
+            font-size: 20px;
+            color: #fff;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1a1a1a;
+            color: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #333;
+        }
+
+        th {
+            background: #222;
+            color: #fff;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        /* Buttons */
+        .add-btn, button {
+            background: #1e88e5;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 2px;
+        }
+
+        button:hover, .add-btn:hover {
+            background: #42a5f5;
+        }
+
+        /* Popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            backdrop-filter: blur(3px);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .popup-content {
+            width: 400px;
+            background: #1b1b1b;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 10px;
+            color: #eee;
+            box-shadow: 0 0 12px rgba(0,0,0,0.5);
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            background: #222;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .btn-close {
+            margin-top: 20px;
+            padding: 10px;
+            background: #b00020;
+            color: white;
+            border: none;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn-close:hover {
+            background: #e53935;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+        <li onclick="showSection('dashboard')">Dashboard</li>
+        <li onclick="showSection('orders')">Transaksi Pesanan</li>
+        <li onclick="showSection('products')">Kelola Produk</li>
+        <li onclick="showSection('users')">Daftar User</li>
+        <li onclick="showSection('admins')">Daftar Admin</li>
+        <li onclick="logoutAdmin()" class="logout">Logout</li>
+    </ul>
+</div>
+
+<div class="content">
+
+    <section id="dashboard" class="section active">
+        <h1>Dashboard</h1>
+        <div class="cards">
+            <div class="card" id="cardOrders"></div>
+            <div class="card" id="cardUsers"></div>
+            <div class="card" id="cardProducts"></div>
+        </div>
+    </section>
+
+    <section id="orders" class="section">
+        <h1>Transaksi Pesanan</h1>
+        <div id="ordersTable"></div>
+    </section>
+
+    <section id="products" class="section">
+        <h1>Kelola Produk</h1>
+        <button class="add-btn" onclick="openAddProductForm()">Tambah Produk</button>
+        <div id="productsTable"></div>
+    </section>
+
+    <section id="users" class="section">
+        <h1>Daftar User</h1>
+        <div id="usersTable"></div>
+    </section>
+
+    <section id="admins" class="section">
+        <h1>Daftar Admin</h1>
+        <button class="add-btn" onclick="openAddAdminForm()">Tambah Admin</button>
+        <div id="adminsTable"></div>
+    </section>
+
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <h2 id="popupTitle"></h2>
+        <div id="popupBody"></div>
+        <button class="btn-close" onclick="closePopup()">Tutup</button>
+    </div>
+</div>
+
+
+<script>
+/* =========================================
+   Proteksi Admin
+========================================= */
+if (!localStorage.getItem("adminLogin")) {
+    alert("Akses ditolak! Kamu bukan admin.");
+    location.href = "index.html";
+}
+
+/* =========================================
+   Helper Storage
+========================================= */
+function get(key) {
+    return JSON.parse(localStorage.getItem(key) || "[]");
+}
+function set(key, val) {
+    localStorage.setItem(key, JSON.stringify(val));
+}
+
+/* =========================================
+   Navigasi
+========================================= */
+function showSection(id) {
+    document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+
+    if (id === "products") loadProducts();
+    if (id === "orders") loadOrders();
+    if (id === "users") loadUsers();
+    if (id === "admins") loadAdmins();
+}
+
+/* =========================================
+   Dashboard
+========================================= */
+function loadDashboard() {
+    document.getElementById("cardOrders").innerHTML =
+        "Total Pesanan<br><b>" + get("orders").length + "</b>";
+
+    document.getElementById("cardUsers").innerHTML =
+        "Total User<br><b>" + get("users").length + "</b>";
+
+    document.getElementById("cardProducts").innerHTML =
+        "Total Produk<br><b>" + get("products").length + "</b>";
+}
+
+/* =========================================
+   Transaksi Pesanan
+========================================= */
+function loadOrders() {
+    let orders = get("orders");
+    let html = `
+        <table>
+            <tr>
+                <th>Invoice</th>
+                <th>User</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+    `;
+
+    orders.forEach((o, i) => {
+        html += `
+            <tr>
+                <td>${o.id}</td>
+                <td>${o.username}</td>
+                <td>${o.total}</td>
+                <td>${o.status}</td>
+                <td>
+                    <button onclick="updateOrderStatus(${i}, 'Diproses')">Proses</button>
+                    <button onclick="updateOrderStatus(${i}, 'Selesai')">Selesai</button>
+                    <button onclick="updateOrderStatus(${i}, 'Ditolak')">Tolak</button>
+                </td>
+            </tr>
+        `;
+    });
+
+    html += "</table>";
+    document.getElementById("ordersTable").innerHTML = html;
+}
+
+function updateOrderStatus(i, status) {
+    let orders = get("orders");
+    orders[i].status = status;
+    set("orders", orders);
+    loadOrders();
+    alert("Status diperbarui menjadi " + status);
+}
+
+/* =========================================
+   Produk (CRUD + Upload Gambar)
+========================================= */
+function loadProducts() {
+    let products = get("products");
+
+    let html = `
+        <table>
+            <tr>
+                <th>Gambar</th>
+                <th>Nama</th>
+                <th>Harga</th>
+                <th>Aksi</th>
+            </tr>
+    `;
+
+    products.forEach((p, i) => {
+        html += `
+            <tr>
+                <td><img src="${p.image || ''}" width="60" style="border-radius:6px"></td>
+                <td>${p.name}</td>
+                <td>${p.price}</td>
+                <td>
+                    <button onclick="editProduct(${i})">Edit</button>
+                    <button onclick="deleteProduct(${i})">Hapus</button>
+                </td>
+            </tr>
+        `;
+    });
+
+    html += "</table>";
+    document.getElementById("productsTable").innerHTML = html;
+}
+
+function openAddProductForm() {
+    openPopup("Tambah Produk", `
+        <input id='pName' placeholder='Nama Produk'>
+        <input id='pPrice' placeholder='Harga Produk'>
+        <input type='file' id='pImage' accept='image/*'>
+        <button onclick='saveNewProduct()'>Simpan</button>
+    `);
+}
+
+function fileToBase64(file, callback) {
+    const reader = new FileReader();
+    reader.onload = e => callback(e.target.result);
+    reader.readAsDataURL(file);
+}
+
+function saveNewProduct() {
+    let name = pName.value;
+    let price = pPrice.value;
+    let file = pImage.files[0];
+
+    if (!file) {
+        alert("Harap upload gambar produk!");
+        return;
+    }
+
+    fileToBase64(file, base64 => {
+        let products = get("products");
+
+        products.push({
+            name,
+            price,
+            image: base64
+        });
+
+        set("products", products);
+        closePopup();
+        loadProducts();
+    });
+}
+
+function editProduct(i) {
+    let p = get("products")[i];
+
+    openPopup("Edit Produk", `
+        <input id='pName' value='${p.name}'>
+        <input id='pPrice' value='${p.price}'>
+        <input type='file' id='pImage' accept='image/*'>
+        <small style='color:#ccc'>Kosongkan jika tidak ingin mengganti gambar</small>
+        <button onclick='saveEditProduct(${i})'>Simpan</button>
+    `);
+}
+
+function saveEditProduct(i) {
+    let products = get("products");
+    products[i].name = pName.value;
+    products[i].price = pPrice.value;
+
+    let file = pImage.files[0];
+
+    if (file) {
+        fileToBase64(file, base64 => {
+            products[i].image = base64;
+            set("products", products);
+            closePopup();
+            loadProducts();
+        });
+    } else {
+        set("products", products);
+        closePopup();
+        loadProducts();
+    }
+}
+
+function deleteProduct(i) {
+    let products = get("products");
+    products.splice(i, 1);
+
+    set("products", products);
+    loadProducts();
+}
+
+/* =========================================
+   User
+========================================= */
+function loadUsers() {
+    let users = get("users");
+
+    let html = `
+        <table>
+            <tr><th>Username</th></tr>
+    `;
+
+    users.forEach(u => {
+        html += `<tr><td>${u.username}</td></tr>`;
+    });
+
+    html += "</table>";
+    document.getElementById("usersTable").innerHTML = html;
+}
+
+/* =========================================
+   Admin
+========================================= */
+function loadAdmins() {
+    let admins = get("admins");
+
+    let html = `
+        <table>
+            <tr><th>Admin</th></tr>
+    `;
+
+    admins.forEach(a => {
+        html += `<tr><td>${a.username}</td></tr>`;
+    });
+
+    html += "</table>";
+    document.getElementById("adminsTable").innerHTML = html;
+}
+
+function openAddAdminForm() {
+    openPopup("Tambah Admin", `
+        <input id='aUser' placeholder='Username'>
+        <input id='aPass' placeholder='Password'>
+        <button onclick='saveNewAdmin()'>Simpan</button>
+    `);
+}
+
+async function saveNewAdmin() {
+    let username = aUser.value;
+    let password = await sha256(aPass.value);
+
+    let admins = get("admins");
+
+    admins.push({ username, password });
+
+    set("admins", admins);
+    closePopup();
+    loadAdmins();
+}
+
+/* =========================================
+   Popup
+========================================= */
+function openPopup(title, body) {
+    document.getElementById("popupTitle").innerText = title;
+    document.getElementById("popupBody").innerHTML = body;
+    document.getElementById("popup").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+/* =========================================
+   Logout
+========================================= */
+function logoutAdmin() {
+    localStorage.removeItem("adminLogin");
+    location.href = "index.html";
+}
+
+/* =========================================
+   SHA-256 (Password Admin)
+========================================= */
+async function sha256(str) {
+    const data = new TextEncoder().encode(str);
+    const hash = await crypto.subtle.digest("SHA-256", data);
+    return Array.from(new Uint8Array(hash))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('');
+}
+
+/* =========================================
+   INIT
+========================================= */
+loadDashboard();
+loadProducts();
+</script>
+
+</body>
+</html>
