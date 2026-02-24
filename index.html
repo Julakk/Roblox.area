@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Store - Top Up Rbx, Gamepass & Gift Item Terpercaya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-box">
+                        <span class="logo-letter">Y</span>
+                    </div>
+                    <span class="logo-text">AHMAD STORE</span>
+                </div>
+                
+                <nav class="main-nav">
+                    <a href="#beranda" class="nav-link active" onclick="scrollToTop()">BERANDA</a>
+                    <a href="#gamepass" class="nav-link">GAMEPASS</a>
+                    <a href="#item" class="nav-link">ITEM</a>
+                    <a href="#layanan" class="nav-link">LAYANAN JOKI</a>
+                    <a href="#reseller" class="nav-link">RESELLER</a>
+                    <a href="#transaksi" class="nav-link">CEK TRANSAKSI</a>
+                    <a href="#topup" class="nav-link">BOOST LUCK</a>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="social-icons">
+                        <a href="ComingSoon" target="_blank" class="social-icon" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://discord.com/invite/4GFnjTPvmg" target="_blank" class="social-icon" title="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://tiktok.com/@ahmadtopup.official" target="_blank" class="social-icon" title="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://youtube.com/@bangjulak004" target="_blank" class="social-icon" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <button class="btn-masuk" onclick="showLoginModal()">Masuk</button>
+                    <button class="btn-daftar" onclick="showRegisterModal()">Daftar</button>
+                </div>
+            </div>
+            
+            <!-- Admin Status Bar -->
+            <div class="admin-status">
+                <span class="status-indicator offline"></span>
+                <span class="status-text">Admin Offline</span>
+                <span class="status-time">8:00 - 22:00</span>
+                <span class="divider">|</span>
+                <i class="far fa-clock"></i>
+                <span id="current-time">23:10:42</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-section">
+        <div class="hero-background">
+            <div class="anime-character left">
+                <img src="character-left.png" alt="Character" onerror="this.style.display='none'">
+            </div>
+            <div class="anime-character right">
+                <img src="character-right.png" alt="Character" onerror="this.style.display='none'">
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">SELAMAT DATANG<br><span class="highlight">DI AHMADSTORE</span></h1>
+                <p class="hero-subtitle">Tempat Top Up Rbx, Gamepass, dan Joki terpercaya.<br>Yuk, mulai petualanganmu sekarang!</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToSection('gamepass')">
+                        <i class="fas fa-shopping-cart"></i> BELI RBX
+                    </button>
+                    <button class="btn-secondary" onclick="scrollToSection('transaksi')">
+                        <i class="fas fa-search"></i> PANDUAN
+                    </button>
+                </div>
+                <div class="scroll-indicator">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">29.915.486R$</div>
+                    <div class="stat-label">Rbx Terjual</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">183.274</div>
+                    <div class="stat-label">Total Order</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">69.247</div>
+                    <div class="stat-label">Total Gamepass Terjual</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">68.508R$</div>
+                    <div class="stat-label">Stock Rbx</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Transactions -->
+    <section class="transactions-section">
+        <div class="container">
+            <h2 class="section-title"><span class="title-highlight">TRANSAKSI</span> TERBARU</h2>
+            <div class="transaction-slider">
+                <button class="slider-btn prev" onclick="slideTransactions(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="transaction-track">
+                    <div class="transaction-card">
+                        <div class="transaction-user">Fi*******ja</div>
+                        <div class="transaction-item">Joki Rank Master</div>
+                        <div class="transaction-badge roblox-joki">Roblox Joki</div>
+                        <div class="transaction-time">30 Januari 2026 pukul 00.06</div>
+                    </div>
+                    <div class="transaction-card">
+                        <div class="transaction-user">O****</div>
+                        <div class="transaction-item">Premium Access</div>
+                        <div class="transaction-badge roblox-gp">Roblox GP</div>
+                        <div class="transaction-time">30 Januari 2026 pukul 00.03</div>
+                    </div>
+                    <div class="transaction-card">
+                        <div class="transaction-user">L****</div>
+                        <div class="transaction-item">ðŸ’µ 403</div>
+                        <div class="transaction-badge robux-login">Robux Login</div>
+                        <div class="transaction-time">30 Januari 2026 pukul 00.01</div>
+                    </div>
+                    <div class="transaction-card">
+                        <div class="transaction-user">Ge***********54</div>
+                        <div class="transaction-item">Golden Sword</div>
+                        <div class="transaction-badge roblox-item">Roblox Item</div>
+                        <div class="transaction-time">30 Januari 2026 pukul 00.04</div>
+                    </div>
+                </div>
+                
+                <button class="slider-btn next" onclick="slideTransactions(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Item Section -->
+    <section id="item" class="item-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><span class="title-highlight">ITEM</span> LIMITED</h2>
+                <div class="section-actions">
+                    <button class="btn-refresh"><i class="fas fa-sync-alt"></i> Refresh</button>
+                    <button class="btn-all">Semua Item</button>
+                </div>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Item Card 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image17.png" alt="Ethereal Sword" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Ethereal+Sword'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">ETHEREAL SWORD</div>
+                        <div class="product-title">SKIN ROD LIMITED FISH IT</div>
+                        <div class="product-price">RP76.000</div>
+                        <div class="product-stock">1523 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Ethereal Sword', 76000)">BELI</button>
+                    </div>
+                </div>
+
+                <!-- Item Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image16.png" alt="Ethereal Jetski" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Ethereal+Jetski'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">ETHEREAL JETSKI</div>
+                        <div class="product-title">SKIN BOAT LIMITED FISH IT</div>
+                        <div class="product-price">RP43.000</div>
+                        <div class="product-stock">1289 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Ethereal Jetski', 43000)">BELI</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan Joki Section -->
+    <section id="layanan" class="layanan-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><span class="title-highlight">LAYANAN</span> JOKI</h2>
+                <div class="section-actions">
+                    <button class="btn-refresh"><i class="fas fa-sync-alt"></i> Refresh</button>
+                </div>
+            </div>
+            
+            <div class="joki-grid">
+                <!-- Joki Package 1 -->
+                <div class="joki-card">
+                    <div class="joki-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="joki-title">JOKI ROD</h3>
+                    <p class="joki-desc">Joki sampai dapet rod dengan garansi</p>
+                    <div class="joki-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Proses 1-3 hari</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% Aman</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Garansi Full</span>
+                        </div>
+                    </div>
+                    <div class="joki-price">SOLD OUT</div>
+                    <button class="btn-buy" onclick="selectProduct('Joki Rod', 150000)">ORDER JOKI</button>
+                </div>
+
+                <!-- Joki Package 2 -->
+                <div class="joki-card">
+                    <div class="joki-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="joki-title">JOKI LEVEL UP</h3>
+                    <p class="joki-desc">Naikan level akun kamu dengan cepat</p>
+                    <div class="joki-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Per 10 Level</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Proses Cepat</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Terpercaya</span>
+                        </div>
+                    </div>
+                    <div class="joki-price">SOLD OUT</div>
+                    <button class="btn-buy" onclick="selectProduct('Joki Level Up (10 Level)', 50000)">ORDER JOKI</button>
+                </div>
+
+                <!-- Joki Package 3 -->
+                <div class="joki-card">
+                    <div class="joki-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3 class="joki-title">JOKI GRINDING</h3>
+                    <p class="joki-desc">Grinding coins dan items untuk kamu</p>
+                    <div class="joki-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Custom Duration</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Hasil Maksimal</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
+                    <div class="joki-price">SOLD OUT</div>
+                    <button class="btn-buy" onclick="selectProduct('Joki Grinding', 75000)">ORDER JOKI</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reseller Section -->
+    <section id="reseller" class="reseller-section">
+        <div class="container">
+            <h2 class="section-title">JADI <span class="title-highlight">RESELLER</span> AHMADSTORE</h2>
+            <p class="section-subtitle">Dapatkan penghasilan tambahan dengan menjadi reseller kami!</p>
+            
+            <div class="reseller-grid">
+                <!-- Benefit 1 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Komisi Menarik</h3>
+                    <p>Dapatkan komisi hingga 15% untuk setiap transaksi</p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Support 24/7</h3>
+                    <p>Tim support siap membantu kapan saja</p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Dashboard Lengkap</h3>
+                    <p>Pantau penjualan dan komisi secara real-time</p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Bonus & Reward</h3>
+                    <p>Dapatkan bonus untuk target penjualan tertentu</p>
+                </div>
+            </div>
+
+            <div class="reseller-cta">
+                <h3>Tertarik Jadi Reseller?</h3>
+                <p>Hubungi kami untuk info lebih lanjut tentang program reseller</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary" onclick="contactReseller()">
+                        <i class="fab fa-whatsapp"></i> Hubungi Admin
+                    </button>
+                    <button class="btn-secondary" onclick="showResellerInfo()">
+                        <i class="fas fa-info-circle"></i> Info Lengkap
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cek Transaksi Section -->
+    <section id="transaksi" class="cek-transaksi-section">
+        <div class="container">
+            <h2 class="section-title"><span class="title-highlight">CEK</span> TRANSAKSI</h2>
+            <p class="section-subtitle">Masukkan kode invoice untuk mengecek status pesanan Anda</p>
+            
+            <div class="cek-transaksi-form">
+                <div class="form-card">
+                    <div class="form-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Cek Status Pesanan</h3>
+                    <form onsubmit="checkTransaction(event)">
+                        <div class="form-group">
+                            <label>Kode Invoice</label>
+                            <input type="text" id="invoiceCode" placeholder="Masukkan kode invoice (contoh: YHK12345)" required>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-search"></i> CEK SEKARANG
+                        </button>
+                    </form>
+                    
+                    <div class="transaction-info">
+                        <p><i class="fas fa-info-circle"></i> Kode invoice dikirim ke WhatsApp setelah order</p>
+                        <p><i class="fas fa-clock"></i> Proses normal: 1-24 jam</p>
+                    </div>
+                </div>
+
+                <!-- Transaction Result (Hidden by default) -->
+                <div id="transactionResult" class="transaction-result" style="display: none;">
+                    <div class="result-card">
+                        <div class="result-header">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Status Transaksi</h3>
+                        </div>
+                        <div class="result-body">
+                            <div class="result-item">
+                                <span class="label">Invoice:</span>
+                                <span class="value" id="resultInvoice">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="label">Produk:</span>
+                                <span class="value" id="resultProduct">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="label">Status:</span>
+                                <span class="value status" id="resultStatus">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="label">Tanggal:</span>
+                                <span class="value" id="resultDate">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Up Coins Section -->
+    <section id="topup" class="topup-section">
+        <div class="container">
+            <h2 class="section-title"><span class="title-highlight">BOOST</span> LUCK SERVER</h2>
+            
+            <div class="topup-grid">
+                <!-- Coins Package 1 -->
+                <div class="topup-card">
+                    <div class="topup-badge">1 JAM X2</div>
+                    <div class="coins-amount">X2 BOOST</div>
+                    <div class="coins-label">LUCK</div>
+                    <div class="topup-price">RP9.000</div>
+                    <button class="btn-buy" onclick="selectProduct('X2 BOOST', 9000)">BELI</button>
+                </div>
+
+                <!-- Coins Package 2 -->
+                <div class="topup-card">
+                    <div class="topup-badge best">3 JAM X4</div>
+                    <div class="coins-amount">X4 BOOST</div>
+                    <div class="coins-label">LUCK</div>
+                    <div class="topup-price">RP43.000</div>
+                    <div class="topup-discount">Hemat 0.5%</div>
+                    <button class="btn-buy" onclick="selectProduct('X4 BOOST', 43000)">BELI</button>
+                </div>
+
+                <!-- Coins Package 3 -->
+                <div class="topup-card">
+                    <div class="topup-badge best">6 JAM X8</div>
+                    <div class="coins-amount">X8 BOOST</div>
+                    <div class="coins-label">LUCK</div>
+                    <div class="topup-price">RP110.000</div>
+                    <div class="topup-discount">Hemat 0.5%</div>
+                    <button class="btn-buy" onclick="selectProduct('X8 BOOST', 110000)">BELI</button>
+                </div>
+
+                <!-- Coins Package 4 -->
+                <div class="topup-card">
+                    <div class="topup-badge best">10 JAM X8</div>
+                    <div class="coins-amount">10 JAM X8</div>
+                    <div class="coins-label">LUCK</div>
+                    <div class="topup-price">RP177.000</div>
+                    <div class="topup-discount">Hemat 0.5%</div>
+                    <button class="btn-buy" onclick="selectProduct('10 JAM X8 BOOST', 177000)">BELI</button>
+                </div>
+
+                <!-- Coins Package 5 -->
+                <div class="topup-card">
+                    <div class="topup-badge best">12 JAM X8</div>
+                    <div class="coins-amount">12 JAM X8</div>
+                    <div class="coins-label">LUCK</div>
+                    <div class="topup-price">RP211.000</div>
+                    <div class="topup-discount">Hemat 0.5%</div>
+                    <button class="btn-buy" onclick="selectProduct('12 JAM X8 BOOST', 211000)">BELI</button>
+                </div>
+
+                <!-- Coins Package 6 -->
+                <div class="topup-card featured">
+                    <div class="topup-badge featured">MEGA DEAL</div>
+                    <div class="coins-amount">24 JAM X8</div>
+                    <div class="coins-label">LUCK</div>
+                    <div class="topup-price">RP410.000</div>
+                    <div class="topup-discount">Hemat 5%</div>
+                    <button class="btn-buy" onclick="selectProduct('24 JAM X8 BOOST', 410000)">BELI</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Seller Gamepass -->
+    <section id="gamepass" class="gamepass-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><span class="title-highlight">BEST SELLER</span> GAMEPASS</h2>
+                <div class="section-actions">
+                    <button class="btn-refresh"><i class="fas fa-sync-alt"></i> Refresh</button>
+                    <button class="btn-all">Semua Gamepass</button>
+                </div>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image.png" alt="VIP + Luck" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=VIP+Luck'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">VIP + HOKI</div>
+                        <div class="product-title">Dapatkan +50% Keberuntungan Mancing...</div>
+                        <div class="product-price">RP39.000</div>
+                        <div class="product-stock">4303 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('VIP + Hoki', 39000)">BELI</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image13.png" alt="Elderwood" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Elderwood'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">ELDERWOOD CRATE 1X</div>
+                        <div class="product-title">Box Gacha Skin Rod...</div>
+                        <div class="product-price">RP9.900</div>
+                        <div class="product-stock">3287 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Elderwood Gacha 1x', 9900)">BELI</button>
+                    </div>
+                </div>
+
+                                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image10.png" alt="Luxury" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Elderwood'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">LUXURY CRATE 1X</div>
+                        <div class="product-title">Box Gacha Skin Rod...</div>
+                        <div class="product-price">RP9.900</div>
+                        <div class="product-stock">3287 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Luxury Gacha 1x', 9900)">BELI</button>
+                    </div>
+                </div>
+
+                                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image11.png" alt="Enchanted" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Elderwood'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">ENCHANTED CRATE 1X</div>
+                        <div class="product-title">Box Gacha Skin Rod...</div>
+                        <div class="product-price">RP9.900</div>
+                        <div class="product-stock">3287 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Enchanted Gacha 1x', 9900)">BELI</button>
+                    </div>
+                </div>
+
+                                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image12.png" alt="Ocean" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Elderwood'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">OCEAN CRATE 1X</div>
+                        <div class="product-title">Box Gacha Skin Rod...</div>
+                        <div class="product-price">RP9.900</div>
+                        <div class="product-stock">3287 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Ocean Gacha 1x', 9900)">BELI</button>
+                    </div>
+                </div>
+
+                                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image14.png" alt="Mystery" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Elderwood'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">MYSTERY CRATE 1X</div>
+                        <div class="product-title">Box Gacha Skin Rod...</div>
+                        <div class="product-price">RP9.900</div>
+                        <div class="product-stock">3287 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Mystery Gacha 1x', 9900)">BELI</button>
+                    </div>
+                </div>
+
+                                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image15.png" alt="Pirate" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Elderwood'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">PIRATE CRATE 1X</div>
+                        <div class="product-title">Box Gacha Skin Rod...</div>
+                        <div class="product-price">RP9.900</div>
+                        <div class="product-stock">3287 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Pirate Gacha 1x', 9900)">BELI</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image7.png" alt="HoverBoat" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Elderwood'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">MINI HOVER BOAT</div>
+                        <div class="product-title">Box Gacha Skin Rod...</div>
+                        <div class="product-price">RP19.000</div>
+                        <div class="product-stock">3287 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Hover Boat', 19000)">BELI</button>
+                    </div>
+                </div>
+
+                                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image5.png" alt="Keberuntungan" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Elderwood'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">KEBERUNTUNGAN KECIL</div>
+                        <div class="product-title">+30% Keberuntungan...</div>
+                        <div class="product-price">RP4.000</div>
+                        <div class="product-stock">3287 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Keberuntungan Kecil', 4000)">BELI</button>
+                    </div>
+                </div>
+
+                                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image4.png" alt="Extra" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Elderwood'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">KEBERUNTUNGAN EXTRA</div>
+                        <div class="product-title"> +80% Keberuntungan...</div>
+                        <div class="product-price">RP21.000</div>
+                        <div class="product-stock">3287 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Keberuntungan Extra', 21000)">BELI</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image9.png" alt="Hyper Boat" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Hyper+Boat'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">HYPER BOAT PACK</div>
+                        <div class="product-title">Hyper Rod & Hyper Bait...</div>
+                        <div class="product-price">RP84.000</div>
+                        <div class="product-stock">3219 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Hyper Boat Pack', 84000)">BELI</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image3.png" alt="Advanced Luck" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Advanced+Luck'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">KEBERUNTUNGAN LANJUTAN</div>
+                        <div class="product-title">Dapatkan +150% Keberuntungan Mancing</div>
+                        <div class="product-price">RP46.000</div>
+                        <div class="product-stock">2891 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Keberuntungan Lanjutan', 46000)">BELI</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image6.png" alt="Double XP" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Double+XP'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">PENGALAMAN GANDA</div>
+                        <div class="product-title">Dapatkan 2x Lipat Peningkatan Coin</div>
+                        <div class="product-price">RP16.000</div>
+                        <div class="product-stock">2654 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Pengalaman Ganda', 16000)">BELI</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image8.png" alt="Sell Anywhere" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Sell+Anywhere'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">SELL ANYWHERE</div>
+                        <div class="product-title">Bebas sell fish</div>
+                        <div class="product-price">RP27.000</div>
+                        <div class="product-stock">2432 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('Sell Anywhere', 27000)">BELI</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 7 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image2.png" alt="Mutations" onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=Mutations'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">+ MUTATIONS</div>
+                        <div class="product-title">MUTATIONS FISH IT</div>
+                        <div class="product-price">RP25.000</div>
+                        <div class="product-stock">2156 TERJUAL</div>
+                        <button class="btn-buy" onclick="selectProduct('+ Mutasi', 25000)">BELI</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+    <div class="container">
+        <h2 class="section-title"><span class="title-highlight">TESTIMONI</span> CUSTOMER KAMI</h2>
+
+        <div class="testimonial-slider">
+            <button class="slider-btn prev" onclick="slideTestimonials(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="testimonial-track">
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="user-name">raw************om</div>
+                        <div class="stars"></div>
+                    </div>
+                    <div class="testimonial-text">MANTAP WOK </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="user-name">Ak**l</div>
+                        <div class="stars"></div>
+                    </div>
+                    <div class="testimonial-text">Pelayanan cepat dan terpercaya!</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="user-name">abi****38</div>
+                        <div class="stars"></div>
+                    </div>
+                    <div class="testimonial-text">Recommended seller! Fast respond</div>
+                </div>
+
+            </div>
+
+            <button class="slider-btn next" onclick="slideTestimonials(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+    <!-- Help Section -->
+    <section class="help-section">
+        <div class="container">
+            <div class="help-content">
+                <h2>MENGALAMI KESULITAN SAAT ORDER?</h2>
+                <p>Kami menyediakan panduan transaksi dalam bentuk video agar lebih mudah dipahami!</p>
+                <div class="help-buttons">
+                    <button class="btn-guide">PANDUAN TRANSAKSI</button>
+                    <button class="btn-contact">KONTAK KAMI</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">FREQUENTLY ASKED <span class="title-highlight">QUESTIONS</span></h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>AHMADSTORE ITU APA SI ?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        AhmadStore adalah platform terpercaya untuk top up Robux, membeli gamepass, dan layanan joki untuk game Fish It di Roblox.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Berapa lama waktu yang dibutuhkan untuk menerima RBX setelah pembayaran ?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Proses pengiriman Robux biasanya memakan waktu 1-24 jam setelah pembayaran dikonfirmasi.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Bagaimana cara mengecek status pesanan?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Anda bisa mengecek status pesanan di menu "Cek Transaksi" dengan memasukkan kode invoice yang diberikan.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Bagaimana cara membeli produk di website ini ?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Pilih produk yang diinginkan, klik "BELI", pilih metode admin, lalu ikuti instruksi pembayaran yang diberikan.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Apa arti dari status "Sedang Diproses" pada pesanan ?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Status ini berarti pesanan Anda sudah diterima dan sedang dalam proses pengerjaan oleh admin kami.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Bagaimana jika saya mengalami kendala ?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Silakan hubungi customer service kami melalui WhatsApp atau Discord yang tersedia di website.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Peta Situs</h3>
+                    <ul>
+                        <li><a href="#beranda">Beranda</a></li>
+                        <li><a href="#gamepass">Topup Rbx</a></li>
+                        <li><a href="#gamepass">Beli Gamepass</a></li>
+                        <li><a href="#layanan">Layanan Joki</a></li>
+                        <li><a href="#transaksi">Cek Transaksi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Komunitas</h3>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Masuk</a></li>
+                        <li><a href="#">Daftar</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Perusahaan</h3>
+                    <ul>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Perjanjian Pengguna</a></li>
+                        <li><a href="#">Pengembalian Dana</a></li>
+                        <li><a href="#">Kontak Kami</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Pusat Bantuan</h3>
+                    <ul>
+                        <li><a href="#">Panduan Transaksi</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>AhmadStore.id adalah platform independen untuk trading item digital dan tidak berafiliasi, didukung, atau disponsori oleh Roblox Corporation. Semua merek dagang merupakan milik dari pemiliknya masing-masing dan hanya digunakan untuk tujuan identifikasi.</p>
+                <p class="copyright">© 2025 Ahmad - AhmadStore. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Masuk ke AhmadStore</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label>Email atau Username</label>
+                    <input type="text" placeholder="Masukkan email atau username">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Masukkan password">
+                </div>
+                <button type="submit" class="btn-submit">MASUK</button>
+                <p class="form-footer">Belum punya akun? <a href="#" onclick="showRegisterModal()">Daftar sekarang</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Register -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRegisterModal()">&times;</span>
+            <h2>Daftar ke AhmadStore</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" placeholder="Masukkan username">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Masukkan email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Masukkan password">
+                </div>
+                <div class="form-group">
+                    <label>Konfirmasi Password</label>
+                    <input type="password" placeholder="Konfirmasi password">
+                </div>
+                <button type="submit" class="btn-submit">DAFTAR</button>
+                <p class="form-footer">Sudah punya akun? <a href="#" onclick="showLoginModal()">Masuk sekarang</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Page Modal -->
+    <div id="cartModal" class="modal-fullpage">
+        <div class="cart-container">
+            <div class="cart-header">
+                <button class="back-btn" onclick="closeCart()">
+                    <i class="fas fa-arrow-left"></i> Kembali
+                </button>
+                <h1>Keranjang Belanja</h1>
+            </div>
+
+            <div class="cart-content">
+                <!-- Left Side - Cart Items -->
+                <div class="cart-items-section">
+                    <div class="cart-categories">
+                        <div class="category-item active">
+                            <input type="checkbox" id="selectAll" onchange="toggleSelectAll()">
+                            <label for="selectAll">Pilih Semua (0)</label>
+                        </div>
+                        
+                        <div class="category-item" onclick="filterCategory('rbx')">
+                            <i class="fas fa-coins"></i>
+                            <span>Rbx 5 Hari</span>
+                        </div>
+                        
+                        <div class="category-item" onclick="filterCategory('vilog')">
+                            <i class="fas fa-gem"></i>
+                            <span>Rbx Vilog</span>
+                        </div>
+                        
+                        <div class="category-item" onclick="filterCategory('joki')">
+                            <i class="fas fa-trophy"></i>
+                            <span>Joki Rblx</span>
+                        </div>
+                        
+                        <div class="category-item" onclick="filterCategory('gamepass')">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Gamepass Rblx</span>
+                        </div>
+                        
+                        <div class="category-item" onclick="filterCategory('item')">
+                            <i class="fas fa-gift"></i>
+                            <span>Item Rblx</span>
+                        </div>
+                    </div>
+
+                    <!-- Empty Cart State -->
+                    <div id="emptyCart" class="empty-cart-state">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Keranjang Kosong</h3>
+                        <p>Belum ada item yang dipilih</p>
+                        <button class="btn-shop" onclick="closeCart()">Mulai Belanja</button>
+                    </div>
+
+                    <!-- Cart Items List -->
+                    <div id="cartItemsList" class="cart-items-list" style="display: none;">
+                        <!-- Items will be inserted here dynamically -->
+                    </div>
+                </div>
+
+                <!-- Right Side - Order Summary -->
+                <div class="order-summary-section">
+                    <div class="summary-card">
+                        <h3>Ringkasan Belanja</h3>
+                        
+                        <div class="summary-row">
+                            <span>Total</span>
+                            <span class="summary-value" id="cartTotal">Rp0</span>
+                        </div>
+
+                        <div class="summary-info">
+                            <p><i class="fas fa-info-circle"></i> List Item</p>
+                            <p class="info-text">Belum ada item yang dipilih</p>
+                        </div>
+
+                        <button class="btn-checkout" id="checkoutBtn" onclick="proceedToCheckout()" disabled>
+                            BELI (0 ITEM)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content product-detail-modal">
+            <span class="close" onclick="closeProductModal()">&times;</span>
+            
+            <div class="product-detail-grid">
+                <!-- Left - Product Info -->
+                <div class="product-detail-left">
+                    <h2>Detail Informasi Gamepass</h2>
+                    <div class="product-image-large">
+                        <img id="modalProductImage" src="" alt="Product">
+                    </div>
+                    <h3 id="modalProductName">Product Name</h3>
+                    <div class="product-game">Fish It!</div>
+                    <div class="product-price-large" id="modalProductPrice">Rp0</div>
+                    <div class="product-status">
+                        <span class="status-badge success">TERSEDIA</span>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Deskripsi Gamepass</h4>
+                        <p id="modalProductDesc">Gamepass fish it!, cukup order lewat website, dan gamepass akan dikirim lewat gift in-game. Praktis, cepat, dan tanpa ribet! gesskeun</p>
+                    </div>
+                </div>
+
+                <!-- Right - Order Form -->
+                <div class="product-detail-right">
+                    <h2>Informasi Pemesanan</h2>
+                    
+                    <div class="form-group">
+                        <label>Username <span class="required">*</span></label>
+                        <input type="text" id="robloxUsername" placeholder="Masukkan Username Rblx" required>
+                    </div>
+
+                    <div class="order-summary-detail">
+                        <h3>Ringkasan Pembayaran</h3>
+                        
+                        <div class="quantity-control">
+                            <label>Jumlah</label>
+                            <div class="quantity-input">
+                                <button onclick="decreaseQuantity()">-</button>
+                                <input type="number" id="quantity" value="1" min="1" readonly>
+                                <button onclick="increaseQuantity()">+</button>
+                            </div>
+                        </div>
+
+                        <div class="price-row">
+                            <span>Harga Satuan</span>
+                            <span id="unitPrice">Rp0</span>
+                        </div>
+
+                        <div class="total-row">
+                            <span>Total</span>
+                            <span id="totalPrice">Rp0</span>
+                        </div>
+
+                        <p class="tax-info">Belum Termasuk Pajak</p>
+
+                        <button class="btn-buy-now" onclick="addToCartFromModal()">BELI</button>
+                        <button class="btn-add-cart" onclick="addToCartFromModal()">TAMBAH KE KERANJANG</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout/Payment Modal -->
+    <div id="paymentModal" class="modal-fullpage">
+        <div class="payment-container">
+            <div class="payment-header">
+                <button class="back-btn" onclick="backToCart()">
+                    <i class="fas fa-arrow-left"></i> Kembali
+                </button>
+                <h1>Pembayaran</h1>
+            </div>
+
+            <div class="payment-content">
+                <!-- Left - Items Summary -->
+                <div class="payment-items-section">
+                    <h2>Items yang Dibeli</h2>
+                    <div id="paymentItemsList" class="payment-items-list">
+                        <!-- Items will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Right - Payment Form -->
+                <div class="payment-form-section">
+                    <div class="payment-form-card">
+                        <h2>Ringkasan Pembayaran</h2>
+                        
+                        <div class="form-group">
+                            <label>No. Telepon <span class="required">*</span></label>
+                            <div class="phone-input">
+                                <span class="country-code">+62</span>
+                                <input type="tel" id="phoneNumber" placeholder="Masukkan No. Telepon" required>
+                            </div>
+                            <div class="alert-warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <div>
+                                    <strong>PERINGATAN PENTING</strong>
+                                    <p>Pastikan nomor telepon yang dimasukkan <strong>BENAR dan VALID</strong>. Nomor telepon ini akan digunakan untuk <strong>notifikasi pesanan</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="email" placeholder="Masukkan Email">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Metode Pembayaran <span class="required">*</span></label>
+                            <select id="paymentMethod" required>
+                                <option value="">Pilih Metode Pembayaran</option>
+                                <option value="qris">QRIS</option>
+                                <option value="dana">DANA</option>
+                                <option value="gopay">GoPay</option>
+                                <option value="ovo">OVO</option>
+                                <option value="shopeepay">ShopeePay</option>
+                                <option value="bank">Transfer Bank</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Kode Promo</label>
+                            <div class="promo-input">
+                                <input type="text" id="promoCode" placeholder="Masukkan kode promo">
+                                <button class="btn-apply-promo" onclick="applyPromo()">PAKAI</button>
+                            </div>
+                        </div>
+
+                        <div class="payment-summary">
+                            <h3>Detail Pembayaran</h3>
+                            
+                            <div class="summary-items">
+                                <p><strong>Items yang dibeli:</strong></p>
+                                <div id="paymentSummaryItems"></div>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span id="paymentSubtotal">Rp0</span>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Pajak</span>
+                                <span id="paymentTax">Rp0</span>
+                            </div>
+
+                            <div class="summary-total">
+                                <span>Total</span>
+                                <span id="paymentTotal">Rp. 0</span>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-info">
+                            <i class="fas fa-video"></i>
+                            <div>
+                                <strong>Tutorial Klaim Orderan</strong>
+                                <p>Pastikan Anda sudah menonton tutorial cara klaim orderan sebelum melakukan pembayaran.</p>
+                                <a href="https://instagram.com/" target="_blank">
+                                    <i class="fab fa-instagram"></i> Tonton Tutorial di Instagram
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="payment-buttons">
+                            <button class="btn-pay" onclick="processPayment()">BAYAR</button>
+                            <button class="btn-cancel" onclick="backToCart()">BATAL</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Cart Button -->
+    <button class="floating-cart" onclick="openCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" id="floatingCartBadge">0</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
